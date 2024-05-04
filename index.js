@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <td>${coin.symbol}</td>
                 <td>${coin.name}</td>
                 <td>${coin.id}</td>
-                <td>$${coin.current_price} %</td>
+                <td style="color:green">${coin.current_price} %</td>
                 <td>Mkt Cap : $ ${coin.total_volume}</td>
             `;
             tableBody.appendChild(row);
@@ -74,3 +74,4 @@ document.getElementById('sortPercentageChangeBtn').addEventListener('click', fun
 fetchDataUsingThen();
 fetchDataUsingAsyncAwait();
 });
+
