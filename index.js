@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Fetch data using .then
     function fetchDataUsingThen() {
         fetch(' https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false')
         .then(response => response.json())
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => console.error('Error', error));
     }
 
-    // Fetch data using async/await
     async function fetchDataUsingAsyncAwait() {
         try {
             const response = await fetch(' https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false');
@@ -19,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('async/await Error:', error);
         }
     }
-     // Render table with fetched data
      function renderTable(data) {
         const tableBody = document.getElementById('tableBody');
         tableBody.innerHTML = '';
@@ -38,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-// Search functionality
 document.getElementById('searchInput').addEventListener('input', function() {
     const searchText = this.value.toLowerCase();
     const rows = document.querySelectorAll('#tableBody tr');
@@ -75,7 +71,6 @@ document.getElementById('sortPercentageChangeBtn').addEventListener('click', fun
     rows.forEach(row => tableBody.appendChild(row));
 });
 
-// Initial data fetch
 fetchDataUsingThen();
 fetchDataUsingAsyncAwait();
 });
